@@ -7,6 +7,24 @@ public class ConstructorsPart1 {
     private String email;
     private String phoneNumber;
 
+    public ConstructorsPart1() {
+        // the use of "this" is calling our other constructor
+        // this ensures defaults if empty constructor is called
+        this(2345, 50.0, "Default name", "Default adress", "default phone");
+    }
+
+    public ConstructorsPart1(String customerName, String email, String phoneNumber) {
+        this(1234, 50.0, customerName, email, phoneNumber);
+    }
+
+    public ConstructorsPart1(int accountNumber, double balance, String customerName, String email, String phoneNumber) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        this.customerName = customerName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
+
     public int getAccountNumber() {
         return accountNumber;
     }
